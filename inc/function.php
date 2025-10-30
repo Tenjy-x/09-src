@@ -19,7 +19,13 @@
   }
 
   function getComments($id_pub) {
-    $sql = "SELECT * FROM Publication WHERE id_pub = '$id_pub'";
+    $sql = "SELECT * FROM Commentaire WHERE id_pub = '$id_pub'";
+    $result = mysqli_query(dbConnect(), $sql);
+    return $result;
+  }
+
+  function insertComment($userId , $id_pub, $comment) {
+    $sql = "INSERT INTO Commentaire (id_membre, id_pub, coms) VALUES ('$userId', '$id_pub', '$comment')";
     $result = mysqli_query(dbConnect(), $sql);
     return $result;
   }

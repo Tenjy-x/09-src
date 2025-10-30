@@ -1,7 +1,7 @@
 <?php
   header( "Content-Type: application/json"); 
 
-  include("function.php");
+  include("../inc/function.php");
   session_start();
   $name=$_POST['name'];
   $pwd=$_POST['passwd'];

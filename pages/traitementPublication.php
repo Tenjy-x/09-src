@@ -1,7 +1,7 @@
 <?php
     header( "Content-Type: application/json"); 
     session_start();
-    include("function.php");
+    include("../inc/function.php");
     $userId = $_SESSION['user']['id_membre'];
     $content = $_POST['content'];
     $result = insertPublication($userId, $content);

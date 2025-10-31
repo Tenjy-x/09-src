@@ -1,6 +1,5 @@
 <?php
   header( "Content-Type: application/json"); 
-
   include("../inc/function.php");
   session_start();
   $name=$_POST['name'];

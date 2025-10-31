@@ -13,13 +13,13 @@
   }
 
   function getPublications() {
-    $sql = "SELECT * FROM Publication";
+    $sql = "SELECT * FROM Publication JOIN Membre ON Publication.id_membre = Membre.id_membre" ;
     $result = mysqli_query(dbConnect(), $sql);
     return $result;
   }
 
   function getComments($id_pub) {
-    $sql = "SELECT * FROM Commentaire WHERE id_pub = '$id_pub'";
+    $sql = "SELECT * FROM Commentaire JOIN Membre ON Commentaire.id_membre = Membre.id_membre WHERE id_pub = '$id_pub'";
     $result = mysqli_query(dbConnect(), $sql);
     return $result;
   }
